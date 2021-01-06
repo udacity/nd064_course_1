@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+
+/*
+ * Formatting the header area
+ */
+
+header {
+  background-color: #f0efeb;
+  height: 60px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+a.logo {
+  font-size: 1.7em;
+  color: #444;
+  float: left;
+  margin-top: 16px;
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+a.logo:hover {
+  color: #777;
+}
+
+/*
+ * Centering the body content
+ */
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  margin-block-start: 80px;
+}
+
+.form {
+  margin:10px auto;
+  max-width: 400px;
+  padding: 20px 12px 10px 20px;
+}
+
+.label {
+  margin:0 0 3px 0;
+  padding:0px;
+  display:block;
+  font-weight: bold;
+}
+
+.button {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: #004643;
+  border-bottom: 2px solid #004643;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;	
+  color: #fff;
+}
+
+h2 {
+  font-size: 3em;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+  color: #004643;
+}
+
+.post {
+   text-decoration: none;
+}
+
+.timestamp {
+  color: #999;
+}
+
+.menu {
+  float: right;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li + li {
+  margin-left: 35px;
+  margin-right: 16px;
+}
+
+.menu li a {
+  color: #444;
+  text-decoration: none;
+}

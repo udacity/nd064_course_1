@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+     <title>{% block title %} {% endblock %}</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+      <header> 
+        <a class="logo" href="{{ url_for('index')}}">TechTrends</a>
+	<div> 
+            <ul class="menu">
+            <li>
+                <a href="about">About</a>
+            </li>
+            <li>
+                <a href="{{url_for('create')}}">New Post</a>
+            </li>
+            </ul>
+        </div>
+      </header>
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>
+
