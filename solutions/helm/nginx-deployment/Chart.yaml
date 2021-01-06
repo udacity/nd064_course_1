@@ -1,0 +1,9 @@
+apiVersion: v1
+name: nginx-deployment
+description: Install Nginx deployment manifests
+keywords:
+- nginx 
+version: 1.0.0
+maintainers:
+- name: kgamanji 
+  email: kgamanji@xyz.com 
