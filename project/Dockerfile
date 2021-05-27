@@ -1,7 +1,7 @@
 FROM python:3.8-slim-buster
 LABEL maintainer="Dani"
 
-COPY /techtrends /app
+COPY . /app
 WORKDIR /app
 RUN pip3 install -r requirements.txt && python3 init_db.py
 
