@@ -43,4 +43,4 @@ jobs:
           file: ./project/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: danisantos/techtrends:1.0.0
+          tags: danisantos/techtrends:latest
