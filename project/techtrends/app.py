@@ -65,7 +65,7 @@ def healthcheck():
         mimetype='application/json'
     )
 
-    app.logger.info('Status request successfull')
+    app.logger.info('Status request successful')
     return response
 
 
@@ -82,7 +82,7 @@ def metrics():
         status=200,
         mimetype='application/json'
     )
-    app.logger.info('Metrics request successfull')
+    app.logger.info('Metrics request successful')
     return response
 
 # Define how each individual article is rendered
