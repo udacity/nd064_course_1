@@ -1,0 +1,31 @@
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:Article successfuly retrieved KubeCon + CloudNativeCon 2021
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:35:51] "GET /2 HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:Article KubeCon + CloudNativeCon 2021 retrieved!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:39:00] "GET /2 HTTP/1.1" 200 -
+INFO:app:Article Kubernetes v1.20 Release Notes retrieved!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:39:10] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:Article "Kubernetes v1.20 Release Notes"/ retrieved!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:39:39] "GET /3 HTTP/1.1" 200 -
+INFO:app:Article "Kubernetes v1.20 Release Notes"/ retrieved!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:39:39] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:Article "Kubernetes v1.20 Release Notes" retrieved!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:40:00] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:40:32] "GET /create HTTP/1.1" 200 -
+INFO:app:Article My new article successfully created!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:40:38] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:40:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:41:12] "GET /create HTTP/1.1" 200 -
+INFO:app:Article Another Article successfully created!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:41:21] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:41:21] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:41:39] "GET /create HTTP/1.1" 200 -
+INFO:app:Article "YAA" successfully created!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:41:50] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:41:50] "GET / HTTP/1.1" 200 -
+INFO:app:About page successfully retrieved!
+INFO:werkzeug:127.0.0.1 - - [26/May/2021 20:41:57] "GET /about HTTP/1.1" 200 -

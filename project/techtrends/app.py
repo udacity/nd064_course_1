@@ -1,11 +1,9 @@
 import sqlite3
-import redis
-import os
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
-import time
-
+import logging
+import datetime
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 
@@ -36,8 +34,10 @@ app.config['SECRET_KEY'] = 'your secret key'
 def hits_count():
     connection = get_db_connection()
     total = len(connection.execute('SELECT * FROM posts').fetchall())
-    connection.execute('INSERT INTO connections (total) VALUES (?)',
-                       str(total+1))
+    totalToString = str(total+1)
+    ts = datetime.datetime.now().timestamp()
+    connection.execute('INSERT INTO connections (created, total) VALUES (?, ?)',
+                       (ts, totalToString))
     connection.commit()
     connection.close()
 
@@ -84,6 +84,7 @@ def metrics():
     )
     app.logger.info('Metrics request successfull')
     return response
+
 # Define how each individual article is rendered
 # If the post ID is not found a 404 page is shown
 
@@ -93,9 +94,13 @@ def post(post_id):
     post = get_post(post_id)
 
     if post is None:
+        app.logger.info('No article could be found')
         return render_template('404.html'), 404
     else:
         hits_count()
+        postTitle = tuple(post)[2]
+        app.logger.info('Article \"%s" retrieved!', postTitle)
+
         return render_template('post.html', post=post)
 
 # Define the About Us page
@@ -103,6 +108,7 @@ def post(post_id):
 
 @ app.route('/about')
 def about():
+    app.logger.info('About page successfully retrieved!')
     return render_template('about.html')
 
 # Define the post creation functionality
@@ -123,6 +129,8 @@ def create():
             connection.commit()
             connection.close()
 
+            app.logger.info('Article \"%s" successfully created!', title)
+
             return redirect(url_for('index'))
 
     return render_template('create.html')
@@ -130,4 +138,5 @@ def create():
 
 # start the application on port 3111
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.DEBUG)
     app.run(host='0.0.0.0', port='3111')
