@@ -1,11 +1,61 @@
 ## Docker commands used to build the application 
 # TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
 # TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
+961b99b0f2ed600478bd628d0171d14f67ed24147501555a5c0bf032c1f333f4
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+ docker logs --follow 961b99b0f2ed600478bd628d0171d14f67ed24147501555a5c0bf032c1f333f4
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:app:10/06/2021, 18:40:10 From @app.route('/'): All artices displayed!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:10] "GET / HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:40:16 From @app.route('/<int:post_id>'): Artice 2020 CNCF Annual Report retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:16] "GET /1 HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:40:19 From @app.route('/<int:post_id>'): Artice KubeCon + CloudNativeCon 2021 retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:19] "GET /2 HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:40:24 From @app.route('/<int:post_id>'): Artice CNCF Cloud Native Interactive Landscape retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:24] "GET /4 HTTP/1.1" 200 -
+ERROR:app:10/06/2021, 18:40:30 From @app.route('/<int:post_id>'): Artice with id: 7 cannot be retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:30] "GET /7 HTTP/1.1" 404 -
+INFO:app:10/06/2021, 18:40:35 From @app.route('/<int:post_id>'): Artice Kubernetes Certification retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:35] "GET /6 HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:40:40 From @app.route('/<int:post_id>'): Artice CNCF Cloud Native Definition v1.0 retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:40] "GET /5 HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:40:45 From @app.route('/<int:post_id>'): Artice CNCF Cloud Native Interactive Landscape retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:45] "GET /4 HTTP/1.1" 200 -
+ERROR:app:10/06/2021, 18:40:48 From @app.route('/<int:post_id>'): Artice with id: 10 cannot be retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:48] "GET /10 HTTP/1.1" 404 -
+ERROR:app:10/06/2021, 18:40:51 From @app.route('/<int:post_id>'): Artice with id: 1000 cannot be retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:40:51] "GET /1000 HTTP/1.1" 404 -
+INFO:app:10/06/2021, 18:41:00 From @app.route('/about'): About Us retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:41:00] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:41:03] "GET /create HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:41:15 From @app.route('/create', methods=('GET', 'POST')): Article with title Test added to database
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:41:15] "POST /create HTTP/1.1" 302 -
+INFO:app:10/06/2021, 18:41:15 From @app.route('/'): All artices displayed!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:41:15] "GET / HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:41:21 From @app.route('/<int:post_id>'): Artice Test retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:41:21] "GET /7 HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:41:26 From @app.route('/<int:post_id>'): Artice Test retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:41:26] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:42:05] "GET /create?title=test2&content=test%20text2 HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:42:19 From @app.route('/create', methods=('GET', 'POST')): Article with title Dummy products added to database
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:42:19] "POST /create?title=test2&content=test%20text2 HTTP/1.1" 302 -
+INFO:app:10/06/2021, 18:42:19 From @app.route('/'): All artices displayed!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:42:19] "GET / HTTP/1.1" 200 -
+INFO:app:10/06/2021, 18:42:25 From @app.route('/<int:post_id>'): Artice Dummy products retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:42:25] "GET /8 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:45:39] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Jun/2021 18:45:51] "GET /healthz HTTP/1.1" 200 -
