@@ -1,0 +1,25 @@
+## file location and name: # .github/workflows/python-version.yml
+
+##  Named of the workflow.
+name: "TechTrends - Package with Docker"
+## Set the trigger policy.
+## In this case, the workflow is execute on a `push` event,
+## or when a new commit is pushed to the repository
+on: [push]
+## List the steps to be executed by the workflow
+jobs:
+  ## Set the name of the job
+  push-image-to-dcokerhub:
+    ## Configure the operating system the workflow should run on.
+    ## In this case, the job on Ubuntu
+    runs-on: ubuntu-latest
+    env:
+        working-directory: ./project/techtrends
+    ## Define a sequence of steps to be executed 
+    steps:
+      ## Use the public `checkout` action in version v2  
+      ## to checkout the existing code in the repository
+      - uses: actions/checkout@v2
+      - name: test action 
+       run ls -R
+       working-directory :${{env.working-directory}}
