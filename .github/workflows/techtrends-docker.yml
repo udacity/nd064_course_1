@@ -1,4 +1,4 @@
-name: techtrends-docker-actions
+name: techtrends-docker
 
 on:
   push:
