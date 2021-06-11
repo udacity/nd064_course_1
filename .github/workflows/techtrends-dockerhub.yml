@@ -31,4 +31,4 @@ jobs:
           file: ./techtrends/Dockerfile
           plattforms: linux/amd64
           push: true
-          tags: crisroddev/techtrends:latest
+          tags: techtrends:latest
