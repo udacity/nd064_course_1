@@ -31,3 +31,6 @@ jobs:
           context: .
           push: true
           tags: user/app:latest
+      - 
+        name: Build the Docker image
+        run: docker build ./project/techtrends --file Dockerfile --tag my-image-name:$(date +%s)
