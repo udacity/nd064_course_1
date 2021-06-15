@@ -1,0 +1,43 @@
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.152.128:5000/ (Press CTRL+C to quit)
+INFO:app:Metrics request successfull
+INFO:werkzeug:192.168.152.128 - - [10/Jun/2021 14:46:44] "GET /metrics HTTP/1.1" 200 -
+INFO:app:Status request successfull
+INFO:werkzeug:192.168.152.128 - - [10/Jun/2021 14:46:56] "GET /status HTTP/1.1" 200 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:35] "GET / HTTP/1.1" 200 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:38] "GET / HTTP/1.1" 200 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Main request successfull
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Jun/2021 20:02:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.152.128:5000/ (Press CTRL+C to quit)
+INFO:app:Status request successfull
+INFO:werkzeug:127.0.0.1 - - [13/Jun/2021 18:06:59] "GET /status HTTP/1.1" 200 -

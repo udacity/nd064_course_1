@@ -1,2 +1,2 @@
-Flask==1.1.1
-werkzeug==0.16.1
+Flask
+werkzeug
