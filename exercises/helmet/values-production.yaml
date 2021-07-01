@@ -1,0 +1,14 @@
+namespace:
+  name: prod
+replicaCount: 2
+image:
+  repository: nginx
+  tag: 1.17.0
+resource: 
+  cpu: 70m
+  memory: 256Mi
+service:
+  port: 80
+configmap:
+  data: "version:1.17.0"
+

@@ -1,0 +1,10 @@
+aPiVersion: v1
+name: nginx-apine
+description: Install cluster nginx apine
+keywords: 
+- nginx
+- alpine
+version: 1.0.0
+maintainers:
+- Arif
+- Cahyowibowo
