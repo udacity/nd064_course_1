@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  version: alpine
+  version: alpine-nginx
 kind: ConfigMap
 metadata:
   name: nginx-version
