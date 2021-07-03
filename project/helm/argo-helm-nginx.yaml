@@ -11,7 +11,7 @@ spec:
   source:
     helm:
       valueFiles:
-      - values-staging.yaml
+      - values.yaml
     path: projects/helm
     repoURL: https://github.com/vincent6767/nd064_course_1
     targetRevision: HEAD
