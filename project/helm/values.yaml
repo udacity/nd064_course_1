@@ -15,6 +15,6 @@ services:
   port: 8111
 
 configmap:
-  data: "version:alpine"
+  data: version:alpine
 
 replicaCount: 3

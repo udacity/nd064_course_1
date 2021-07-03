@@ -31,6 +31,3 @@ spec:
           requests:
             memory: {{ .Values.resources.memory }}
             cpu: {{ .Values.resources.cpu }}
-          limits:
-            memory: "128Mi"
-            cpu: "500m"

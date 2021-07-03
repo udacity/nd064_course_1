@@ -11,5 +11,5 @@ resources:
   memory: 128Mi
 
 configmap:
-  data: "version:1.18.0"
+  data: version:1.18.0
 
