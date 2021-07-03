@@ -12,7 +12,7 @@ spec:
     helm:
       valueFiles:
       - values-prod.yaml
-    path: projects/helm
+    path: project/helm
     repoURL: https://github.com/vincent6767/nd064_course_1
     targetRevision: HEAD
   syncPolicy: {}
