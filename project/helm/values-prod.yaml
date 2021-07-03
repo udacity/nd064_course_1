@@ -1,0 +1,19 @@
+namespace:
+  name: prod
+
+replicaCount: 2
+ 
+image:
+  tag: 1.17.0
+
+resources:
+  cpu: 70m
+  memory: 256Mi
+
+services:
+  type: ClusterIP
+  port: 80
+
+configmap:
+  data: "version:1.17.0"
+
