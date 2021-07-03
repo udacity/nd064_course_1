@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-staging 
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values-staging.yaml
+    path: projects/helm
+    repoURL: https://github.com/vincent6767/nd064_course_1
+    targetRevision: HEAD
+  syncPolicy: {}

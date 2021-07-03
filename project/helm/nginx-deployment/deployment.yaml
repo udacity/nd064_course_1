@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+    tag: {{ .Values.image.tag }}
+  name: nginx-alpine
+  namespace: {{ .Values.namespace.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: nginx
+      tag: {{ .Values.image.tag }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  resources:
+      requests:
+        memory: {{ .Values.resources.memory }}
+        cpu: {{ .Values.resources.cpu }}
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tag: {{ .Values.image.tag }}
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: nginx-{{ .Values.image.tag }}
+
+
+{{ toYaml .Values.resources | indent 12 }}
