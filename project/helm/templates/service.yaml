@@ -8,10 +8,10 @@ metadata:
   namespace: {{ .Values.namespace.name }}
 spec:
   ports:
-  - port: 8111
+  - port: {{ .Values.services.port }}
     protocol: TCP
-    targetPort: 8111
+    targetPort: {{ .Values.services.port }}
   selector:
     app: nginx
     tag: alpine
-  type: ClusterIP
+  type: {{ .Values.services.type }}
