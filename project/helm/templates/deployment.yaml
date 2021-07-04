@@ -26,7 +26,7 @@ spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        name: nginx-{{ .Values.image.tag }}
+        name: nginx-alpine
         resources:
           requests:
             memory: {{ .Values.resources.memory }}
