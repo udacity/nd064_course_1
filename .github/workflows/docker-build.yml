@@ -1,0 +1,3 @@
+Image name: python-helloworld
+Tag: latest
+Platforms: platforms: linux/amd64,linux/arm64
