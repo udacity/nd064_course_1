@@ -1,0 +1,33 @@
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.1.116:5000/ (Press CTRL+C to quit)
+INFO:app:Metrics request successful
+INFO:werkzeug:192.168.1.147 - - [08/Jul/2021 16:29:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.147 - - [08/Jul/2021 16:29:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:app:Metrics request successful
+INFO:werkzeug:192.168.1.147 - - [08/Jul/2021 16:29:44] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.147 - - [08/Jul/2021 16:30:14] "[33mGET /metrics1 HTTP/1.1[0m" 404 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.1.116:5000/ (Press CTRL+C to quit)
+INFO:app:Status request successful
+INFO:werkzeug:192.168.1.147 - - [09/Jul/2021 08:55:18] "GET /status HTTP/1.1" 200 -
+INFO:app:Metrics request successful
+INFO:werkzeug:192.168.1.147 - - [09/Jul/2021 08:55:31] "GET / HTTP/1.1" 200 -
+INFO:app:Metrics request successful
+INFO:werkzeug:192.168.1.147 - - [09/Jul/2021 08:57:23] "GET /metrics HTTP/1.1" 200 -
+INFO:app:Metrics request successful
+INFO:werkzeug:192.168.1.147 - - [09/Jul/2021 08:58:10] "GET / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.1.116:5000/ (Press CTRL+C to quit)
+INFO:app:Index request successful
+INFO:werkzeug:192.168.1.147 - - [09/Jul/2021 08:58:56] "GET / HTTP/1.1" 200 -
+INFO:app:Index request successful
+INFO:werkzeug:192.168.1.147 - - [09/Jul/2021 08:59:38] "POST / HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.1.116:5000/ (Press CTRL+C to quit)
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.1.116:5000/ (Press CTRL+C to quit)

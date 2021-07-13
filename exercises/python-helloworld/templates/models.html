@@ -1,0 +1,17 @@
+<!doctype html>
+    <title>List of Models</title>
+    
+    <p><a href="{{ url_for('.add_user_view') }}"> Add Model </a></p>
+    
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>    
+    {{ table }}

@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <form method="post" action="/add_model">
+        <dl>
+            <p>
+                <input name="inputModelCode" value="" type="text" placeholder="Manufacturer Model Code" autocomplete="off" required>
+            </p>
+            <p>
+                <input name="inputModelYear" value="" type="text" placeholder="Year" autocomplete="off" required>
+            </p>
+            <p>
+                <input name="inputModelName" value="" type="text" placeholder="Model" autocomplete="off" required>
+            </p>
+            <p>
+                <select name="inputSelectMake">
+                    {% for row in rows %}
+                      <option value="{{row.id}}">{{row.make_name}}({{row.make_abbreviation}})</option>
+                    {% endfor%}  
+                </select>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Create Model">
+        </p>
+    </form>
+{% endblock %}
+

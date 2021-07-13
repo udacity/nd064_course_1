@@ -1,0 +1,36 @@
+<!doctype html>
+    <title>Edit Model</title>
+    <h2>Edit Model</h2>
+    <form method="post" action="/update">
+        <dl>
+            <p>
+                <input name="" value="{{ model_row['model_id'] }}" placeholder="Model Code" autocomplete="off" disabled>
+            </p>
+            <p>
+                <input name="inputModelCode" value="{{ model_row['model_code'] }}" type="text" placeholder="Model Code" autocomplete="off" required>
+            </p>
+            <p>
+                <input name="inputModelYear" value="{{ model_row['model_year'] }}" type="text" placeholder="Model Year" autocomplete="off" required>
+            </p>
+            <p>
+                <input name="inputModelName" value="{{ model_row['model_name_za'] }}" placeholder="Model Name" autocomplete="off" required>
+            </p>
+            <p>
+                <select name="inputSelectMake">
+                    {% for make in make_rows %}
+                        {% if make.make_id ==  model_row['key_make'] %}
+                            <option value = "{{make.make_id}}" selected> 
+                        {% else %}
+                            <option value = "{{make.make_id}}">
+                        {% endif %}                     
+                        ({{make.make_abbreviation}}){{make.make_name}}
+                        </option>
+                    {% endfor %}
+                </select>
+            </p>
+        </dl>
+        <p>
+            <input name="id" value="{{ model_row['model_id'] }}" type="hidden">
+            <input type="submit" value="Submit">
+        </p>
+    </form>
