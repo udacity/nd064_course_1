@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  version: {{ .Values.image.tag }}
+kind: ConfigMap
+metadata:
+  name: nginx-{{ .Values.image.tag }}
+  namespace: {{ .Values.namespace.name }}

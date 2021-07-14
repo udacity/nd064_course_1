@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   labels:
     app: nginx
-  name: nginx
+    tag: {{ .Values.image.tag }}
+  name: nginx-{{ .Values.image.tag }}
   namespace: {{ .Values.namespace.name }} 
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -16,6 +17,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
+      tag: {{ .Values.image.tag }}
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -25,8 +27,9 @@ spec:
     metadata:
       labels:
         app: nginx
+        tag: {{ .Values.image.tag }}
     spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: IfNotPresent 
-        name: nginx
+        name: nginx-{{ .Values.image.tag }}

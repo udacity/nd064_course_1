@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx
+    tag: {{ .Values.image.tag }}
+  name: nginx-{{ .Values.image.tag }}
+  namespace: {{ .Values.namespace.name }}
+spec:
+  ports:
+  - port: {{ .Values.namespace.servicePort }}
+    protocol: TCP
+    targetPort: {{ .Values.namespace.servicePort }}
+  selector:
+    app: nginx
+    tag: {{ .Values.image.tag }}
+  type: {{ .Values.namespace.serviceType }}
