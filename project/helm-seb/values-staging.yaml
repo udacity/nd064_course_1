@@ -6,5 +6,5 @@ image:
 
 replicaCount: 1
 resources:
-  limits:
+  requests:
     memory: "128Mi"

@@ -6,7 +6,7 @@ image:
 
 replicaCount: 2
 resources:
-  limits:
-    cpu: ".7"
+  requests:
+    cpu: "70m"
     memory: "256Mi"
 servicePort: 80

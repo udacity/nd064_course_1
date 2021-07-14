@@ -8,12 +8,6 @@ metadata:
   namespace: {{ .Values.namespace.name }} 
 spec:
   replicas: {{ .Values.replicaCount }}
-  resources:
-    limits:
-    cpu: {{ .Values.resources.limits.cpu }}
-    memory: {{ .Values.resources.limits.memory }}
-  serviceType: {{ .Values.resources.serviceType }}
-  servicePort: {{ .Values.resources.servicePort }}
   selector:
     matchLabels:
       app: nginx
