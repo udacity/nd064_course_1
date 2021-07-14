@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  replicas: {{ .Values.replicaCount }}
+  resources:
+    limits:
+    cpu: {{ .Values.resources.limits.cpu }}
+    memory: {{ .Values.resources.limits.memory }}
+  serviceType: {{ .Values.resources.serviceType }}
+  servicePort: {{ .Values.resources.servicePort }}
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: IfNotPresent 
+        name: nginx

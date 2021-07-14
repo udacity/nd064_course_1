@@ -1,0 +1,12 @@
+namespace:
+  name: prod
+
+image:
+  tag: 1.17.0
+
+replicaCount: 2
+resources:
+  limits:
+    cpu: ".7"
+    memory: "256Mi"
+servicePort: 80

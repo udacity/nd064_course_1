@@ -1,0 +1,9 @@
+apiVersion: v1
+name: nginx-deployment
+description: Install a nginx deployment
+keywords:
+- nginx
+version: 1.0.0
+maintainers:
+- name: bodrero
+  email: sebastien@bodrero.fr

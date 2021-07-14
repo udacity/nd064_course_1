@@ -1,0 +1,14 @@
+namespace:
+  name: demo
+ 
+image:
+  repository: nginx
+  tag: alpine
+
+replicaCount: 3
+resources:
+  limits:
+    cpu: ".5"
+    memory: "256Mi"
+serviceType: "ClusterIP"
+servicePort: 8111
