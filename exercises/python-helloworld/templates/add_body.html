@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<p>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+</p>
+<p>
+<h1>Create New Body</h1>
+<form action="/save" method="POST">
+    <p>
+        <input type="text" name="bodyType" id="bodyType" placeholder="Vehicle body type" autocomplete="off" required>
+    </p>
+    <p>
+        <input type="number" name="doors" id="doors" placeholder="Number of days" autocomplete="off" required>
+    </p>
+    <p>
+        <input type="submit" name="createBody" id="createBody" value="Create Body">
+    </p>
+</form>
+</p>
+{% endblock %}

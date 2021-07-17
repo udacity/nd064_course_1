@@ -1,4 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
-{{table}}
+{{body_rows}}
+{% for row in body_rows%}
+    <li>
+        {{row.body_type}}
+    </li>
+{% endfor %}
+<!-- {{table}} -->
 {% endblock %}
