@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: python-helloworld 
+  name: nginx-alpine 
   namespace: argocd
 spec:
 # set the cluster to be deployed on. In this case, the local cluster to deploy our resources
