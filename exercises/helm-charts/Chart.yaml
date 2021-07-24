@@ -1,0 +1,10 @@
+apiVersion: v1
+name: nginx-deployment
+description: Install nginx deployment using manifests
+version: 1.0.0
+keywords:
+- nginx
+- nginx-deployment
+maintainers:
+- name: Micah Joel
+  email: justmic007@gmail.com

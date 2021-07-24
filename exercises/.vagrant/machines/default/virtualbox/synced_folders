@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/micah/Documents/workspace/suse_udacity/nd064_course_1/exercises","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}

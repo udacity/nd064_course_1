@@ -1,0 +1,21 @@
+namespace:
+  name: staging
+
+replicaCount: 1
+
+service:
+  port: 8111
+  type: ClusterIp
+
+image:
+  repository: nginx
+  tag: 1.18.0
+  pullPolicy: IfNotPresent
+
+resources:
+  requests:
+    CPU: 50m
+    memory: 128Mi
+
+configmap:
+  data: "version: 1.18.0"
