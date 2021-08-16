@@ -1,11 +1,45 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build . -t techtrends
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run --name techtrends_api -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker logs -f techtrends_api
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+❯ docker logs -f techtrends_api
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 176-646-777
+172.17.0.1 - - [16/Aug/2021 19:33:24] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [16/Aug/2021 19:33:24] "GET /static/css/main.css HTTP/1.1" 200 -
+172.17.0.1 - - [16/Aug/2021 19:33:24] "GET /favicon.ico HTTP/1.1" 404 -
+[2021-08-16 19:33:27,624] INFO in app: opened about up page.
+172.17.0.1 - - [16/Aug/2021 19:33:27] "GET /about HTTP/1.1" 200 -
+[2021-08-16 19:33:35,857] DEBUG in app: health endpoint was called
+172.17.0.1 - - [16/Aug/2021 19:33:35] "GET /healthz HTTP/1.1" 200 -
+[2021-08-16 19:34:06,399] INFO in app: Post count retrieved from database
+[2021-08-16 19:34:06,399] INFO in app: Metrics ready to be sent.
+172.17.0.1 - - [16/Aug/2021 19:34:06] "GET /metrics HTTP/1.1" 200 -
+[2021-08-16 19:34:11,036] INFO in app: Article KubeCon + CloudNativeCon 2021 retrieved!
+172.17.0.1 - - [16/Aug/2021 19:34:11] "GET /2 HTTP/1.1" 200 -
+[2021-08-16 19:34:14,736] INFO in app: Article CNCF Cloud Native Definition v1.0 retrieved!
+172.17.0.1 - - [16/Aug/2021 19:34:14] "GET /5 HTTP/1.1" 200 -
+[2021-08-16 19:34:18,642] ERROR in app: no post was found
+172.17.0.1 - - [16/Aug/2021 19:34:18] "GET /7 HTTP/1.1" 404 -
+172.17.0.1 - - [16/Aug/2021 19:35:07] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [16/Aug/2021 19:36:38] "GET /create HTTP/1.1" 200 -
+[2021-08-16 19:36:52,719] INFO in app: New article was added with title K8s is awesome
+172.17.0.1 - - [16/Aug/2021 19:36:52] "POST /create HTTP/1.1" 302 -
+172.17.0.1 - - [16/Aug/2021 19:36:52] "GET / HTTP/1.1" 200 -
+[2021-08-16 19:37:05,322] ERROR in app: no post was found
+172.17.0.1 - - [16/Aug/2021 19:37:05] "GET /8 HTTP/1.1" 404 -
+[2021-08-16 19:37:09,020] INFO in app: Article K8s is awesome retrieved!
+172.17.0.1 - - [16/Aug/2021 19:37:09] "GET /7 HTTP/1.1" 200 -
