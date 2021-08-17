@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deploymentConfig.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.deploymentConfig.name }}_api
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deploymentConfig.name }}_api
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deploymentConfig.name }}_api
+    spec:
+      containers:
+        - name: {{ .Values.deploymentConfig.name }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - containerPort: {{ .Values.deploymentConfig.containerPort }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.deploymentConfig.livenessProbePath }}
+              port: {{ .Values.deploymentConfig.containerPort }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.deploymentConfig.readinessProbePath }}
+              port: {{ .Values.deploymentConfig.containerPort }}

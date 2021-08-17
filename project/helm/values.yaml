@@ -1,0 +1,29 @@
+namespace: sandbox
+
+service:
+  name: techtrends
+  port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+
+image:
+  repository: dsdatsme/techtrends
+  pullPolicy: IfNotPresent
+  tag: latest
+
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 128Mi
+  requests:
+    cpu: 250m
+    memory: 64Mi
+
+deploymentConfig:
+  name: techtrends
+  containerPort: 3111
+  livenessProbePath: /healthz
+  readinessProbePath: /healthz

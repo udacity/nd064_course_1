@@ -1,0 +1,29 @@
+namespace: staging
+
+service:
+  name: techtrends
+  port: 5111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+
+image:
+  repository: dsdatsme/techtrends
+  pullPolicy: IfNotPresent
+  tag: latest
+
+replicaCount: 3
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 128Mi
+  requests:
+    cpu: 300m
+    memory: 90Mi
+
+deploymentConfig:
+  name: techtrends
+  containerPort: 3111
+  livenessProbePath: /healthz
+  readinessProbePath: /healthz

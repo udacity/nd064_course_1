@@ -1,0 +1,29 @@
+namespace: prod
+
+service:
+  name: techtrends
+  port: 7111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+
+image:
+  repository: dsdatsme/techtrends
+  pullPolicy: Always
+  tag: latest
+
+replicaCount: 5
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 350m
+    memory: 128Mi
+
+deploymentConfig:
+  name: techtrends
+  containerPort: 3111
+  livenessProbePath: /healthz
+  readinessProbePath: /healthz
