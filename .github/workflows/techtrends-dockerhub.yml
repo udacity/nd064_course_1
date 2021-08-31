@@ -1,4 +1,4 @@
-Implement Continuous Integration (CI) fundamentals by automating the packaging of the TechTrends application.
+Use Continuous Integration (CI) fundamentals by automating the packaging of the TechTrends application.
 
 name: TechTrends - Package with Docker
 

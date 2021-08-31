@@ -1,0 +1,38 @@
+namespace:
+  name: sandbox
+
+service:
+  port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+ 
+image:
+  repository: njsgrace/techtrends
+  tag: latest
+  pullPolicy: IfNotPresend
+
+replicaCount: 1
+
+resources:
+  requests: 
+    memory: "64Mi"
+    cpu: "250m"
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+
+containerPort: 3111
+
+livenessProbe:
+  httpGet: 
+    path: /healthz
+    port: 3111
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: 3111
+
+  
+

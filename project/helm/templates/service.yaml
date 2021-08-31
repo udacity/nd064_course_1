@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: techtrends
+    tag: latest
+  name: techtrends
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  ports:
+  - port: {{ .Values.service.port }} 
+    protocol: TCP
+    targetPort: {{ .Values.service.port }}
+  selector:
+    app: techtrends
+    tag: latest
+  type: {{ .Values.service.type }} 
