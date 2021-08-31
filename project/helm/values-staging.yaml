@@ -4,6 +4,11 @@ namespace:
 service:
   port: 5111
   type: ClusterIP
+  
+image:
+  repository: njsgrace/techtrends
+  tag: latest
+  pullPolicy: Always
 
 replicaCount: 3
 
