@@ -25,42 +25,34 @@ Use a production WSGI server instead.
 
 INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:31:48] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:40:30] "GET / HTTP/1.1" 200 -
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:31:48] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:40:30] "GET /favicon.ico HTTP/1.1" 404 -
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:31:48] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:09/02/2021, 06:40:07, Article "2020 CNCF Annual Report" retrieved!
 
-INFO:app:Health Check request successful
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:40:33] "GET /1 HTTP/1.1" 200 -
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:32:20] "GET /healthz HTTP/1.1" 200 -
+ERROR:app:09/02/2021, 06:40:07, Article does not exist!
 
-INFO:app:Metrics request successful
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:40:43] "GET /11 HTTP/1.1" 404 -
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:32:25] "GET /metrics HTTP/1.1" 200 -
+INFO:app:09/02/2021, 06:40:07, About Us page retrieved!
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:32:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:40:50] "GET /about HTTP/1.1" 200 -
 
-INFO:app:08/25/2021, 06:31:38, Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:42:34] "GET /create HTTP/1.1" 200 -
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:32:48] "GET /1 HTTP/1.1" 200 -
+INFO:app:09/02/2021, 06:40:07, Article "New post" created!
 
-INFO:app:08/25/2021, 06:31:38, Article "CNCF Cloud Native Interactive Landscape" retrieved!
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:42:52] "POST /create HTTP/1.1" 302 -
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:32:59] "GET /4 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:42:52] "GET / HTTP/1.1" 200 -
 
-INFO:app:08/25/2021, 06:31:38, "About Us" page retrieved!
+INFO:app:09/02/2021, 06:40:07, Article "New post" retrieved!
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:33:08] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:42:58] "GET /7 HTTP/1.1" 200 -
 
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:33:17] "GET /create HTTP/1.1" 200 -
+INFO:app:09/02/2021, 06:40:07, Metrics request successful
 
-INFO:app:08/25/2021, 06:31:38, Article "Rancher" created!
-
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:33:50] "POST /create HTTP/1.1" 302 -
-
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:33:50] "GET / HTTP/1.1" 200 -
-
-INFO:app:08/25/2021, 06:31:38, Article "Rancher" retrieved!
-
-INFO:werkzeug:172.17.0.1 - - [25/Aug/2021 06:34:02] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [02/Sep/2021 06:43:09] "GET /metrics HTTP/1.1" 200 -
