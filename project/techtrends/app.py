@@ -65,6 +65,11 @@ def create():
 
     return render_template('create.html')
 
+# Define the healthz endpoint
+@app.route('/healthz')
+def returnHealthz():
+    return jsonify({"status": "OK - healthy"})
+
 # start the application on port 3111
 if __name__ == "__main__":
    app.run(host='0.0.0.0', port='3111')
