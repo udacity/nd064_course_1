@@ -1,13 +1,19 @@
+from os import cpu_count
 import sqlite3
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
+# Global Variable
+conn_counter = 0
+
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
+    global conn_counter
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
+    conn_counter+=1
     return connection
 
 # Function to get a post using its ID
@@ -67,8 +73,17 @@ def create():
 
 # Define the healthz endpoint
 @app.route('/healthz')
-def returnHealthz():
+def return_healthz():
     return jsonify({"status": "OK - healthy"})
+
+# Define the metrics endpoint
+@app.route('/metrics')
+def return_metrics():
+    connection = get_db_connection()
+    posts_count = connection.execute('SELECT COUNT(*) FROM posts').fetchone()
+    connection.close()
+    return jsonify({"posts_count": posts_count['COUNT(*)'], "db_connection_count": conn_counter})
+
 
 # start the application on port 3111
 if __name__ == "__main__":
