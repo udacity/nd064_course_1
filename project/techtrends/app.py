@@ -1,4 +1,3 @@
-from os import cpu_count
 import logging
 import sqlite3
 
