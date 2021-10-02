@@ -5,7 +5,7 @@
 docker build -t vincent6767/techtrends:v0.1 -m 256mb --no-cache=true .
 
 ## Docker commands used to run the application
-docker run -d -p 127.0.0.1:7111:3111 vincent6767/techtrends:v0.1
+docker run -d -p 127.0.0.1:7111:3111 vincent6767/techtrends
 
 ## Docker commands used to get the application logs
 ## Here I put the Docker container ID generated in my machine. Please use yours when you run this command.
