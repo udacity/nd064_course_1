@@ -1,11 +1,40 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build --tag techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker ps 
+# output of docker ps
+# CONTAINER ID   IMAGE        COMMAND           CREATED          STATUS          PORTS                    NAMES
+# b3afa37448a1   techtrends   "python app.py"   13 minutes ago   Up 13 minutes   0.0.0.0:7111->3111/tcp   beautiful_dubinsky
+docker logs b3afa37448a1
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+* Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+2021-10-03 10:19:13,757  * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+2021-10-03 10:19:18,480 172.17.0.1 - - [03/Oct/2021 10:19:18] "GET / HTTP/1.1" 200 -
+2021-10-03 10:19:18,556 172.17.0.1 - - [03/Oct/2021 10:19:18] "GET /static/css/main.css HTTP/1.1" 200 -
+2021-10-03 10:19:18,818 172.17.0.1 - - [03/Oct/2021 10:19:18] "GET /favicon.ico HTTP/1.1" 404 -
+2021-10-03 10:19:19,714 172.17.0.1 - - [03/Oct/2021 10:19:19] "GET / HTTP/1.1" 200 -
+2021-10-03 10:20:33,192 Article 2020 CNCF Annual Report retrieved!
+2021-10-03 10:20:33,209 172.17.0.1 - - [03/Oct/2021 10:20:33] "GET /1 HTTP/1.1" 200 -
+2021-10-03 10:20:41,268 172.17.0.1 - - [03/Oct/2021 10:20:41] "GET /create HTTP/1.1" 200 -
+2021-10-03 10:20:48,801 Article My Post created!
+2021-10-03 10:20:48,804 172.17.0.1 - - [03/Oct/2021 10:20:48] "POST /create HTTP/1.1" 302 -
+2021-10-03 10:20:48,817 172.17.0.1 - - [03/Oct/2021 10:20:48] "GET / HTTP/1.1" 200 -
+2021-10-03 10:20:56,299 172.17.0.1 - - [03/Oct/2021 10:20:56] "GET /create HTTP/1.1" 200 -
+2021-10-03 10:21:34,269 172.17.0.1 - - [03/Oct/2021 10:21:34] "GET /metrics HTTP/1.1" 200 -
+2021-10-03 10:21:49,706 172.17.0.1 - - [03/Oct/2021 10:21:49] "GET /healthz HTTP/1.1" 200 -
+2021-10-03 10:30:57,583 172.17.0.1 - - [03/Oct/2021 10:30:57] "GET /healthz HTTP/1.1" 200 -
+2021-10-03 10:31:01,234 172.17.0.1 - - [03/Oct/2021 10:31:01] "GET / HTTP/1.1" 200 -
+2021-10-03 10:31:04,378 Article 2020 CNCF Annual Report retrieved!
+2021-10-03 10:31:04,379 172.17.0.1 - - [03/Oct/2021 10:31:04] "GET /1 HTTP/1.1" 200 -
+2021-10-03 10:31:15,051 About us page retrieved!
+2021-10-03 10:31:15,058 172.17.0.1 - - [03/Oct/2021 10:31:15] "GET /about HTTP/1.1" 200 -
+
