@@ -1,11 +1,21 @@
 import sqlite3
+import logging
 
-from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
+from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash, Response
 from werkzeug.exceptions import abort
+
+get_db_connection_counter = 0
+FORMAT = '%(asctime)-15s %(message)s'
+logging.basicConfig(format=FORMAT)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
+    global get_db_connection_counter
+    get_db_connection_counter = get_db_connection_counter + 1
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     return connection
@@ -19,6 +29,7 @@ def get_post(post_id):
     return post
 
 # Define the Flask application
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 
@@ -36,13 +47,16 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
+      logger.info("Article does not exist !")
       return render_template('404.html'), 404
     else:
+      logger.info("Article " + post['title']+ " retrieved!")
       return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
+    logger.info("About us page retrieved!")
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -60,10 +74,24 @@ def create():
                          (title, content))
             connection.commit()
             connection.close()
-
+            logger.info("Article " + title + " created!")
             return redirect(url_for('index'))
 
     return render_template('create.html')
+
+@app.route('/healthz')
+def get_healthz():
+   return Response("{'result':'OK - healthy'}", status=200, mimetype='application/json')
+
+@app.route('/metrics')
+def get_metrics():
+    connection = get_db_connection()
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+    global get_db_connection_counter
+    response =  { 'db_connection_count': get_db_connection_counter , 'posts_count': len(posts)}
+    connection.close()
+    return Response(str(response), status=200, mimetype='application/json')
+
 
 # start the application on port 3111
 if __name__ == "__main__":
