@@ -12,6 +12,6 @@ spec:
     helm:
       valueFiles:
         - values-staging.yaml
-    path: project/helm/techtrends
-    repoURL: https://github.com/asquare14/techtrends
+    path: project/helm
+    repoURL: https://github.com/asquare14/nd064_course_1
     targetRevision: HEAD
