@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: techtrends
+  name: techtrends
+  namespace: sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: techtrends
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: techtrends
+    spec:
+      containers:
+        - image: asquare14/techtrends:latest
+          name: techtrends
+          ports:
+            - containerPort: 3111
+          resources:
+            requests:
+              cpu: 250m
+              memory: '64Mi'
+            limits:
+              cpu: 500m
+              memory: '128Mi'
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 3111
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3111
+            initialDelaySeconds: 15
+            periodSeconds: 20

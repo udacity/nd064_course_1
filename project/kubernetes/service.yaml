@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: techtrends
+  name: techtrends
+spec:
+  ports:
+    - name: 4111-3111
+      port: 4111
+      protocol: TCP
+      targetPort: 3111
+  selector:
+    app: techtrends
+  type: ClusterIP
