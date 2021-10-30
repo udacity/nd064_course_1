@@ -1,11 +1,36 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker ps
+docker logs 09c36924b525
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:30:01] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:30:01] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:30:02] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:10/30/2021, 18:30:19 | Article "2020 CNCF Annual Report" retrieved
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:30:19] "GET /1 HTTP/1.1" 200 -
+INFO:app:10/30/2021, 18:33:00 | Metrics request: OK
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:00] "GET /metrics HTTP/1.1" 200 -
+INFO:app:10/30/2021, 18:33:17 | Healthcheck request: OK
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:17] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:31] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:34] "GET /create HTTP/1.1" 200 -
+INFO:app:10/30/2021, 18:33:41 | A new article "abc" created
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:41] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:41] "GET / HTTP/1.1" 200 -
+INFO:app:10/30/2021, 18:33:44 | Article "abc" retrieved
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:44] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:46] "GET / HTTP/1.1" 200 -
+INFO:app:10/30/2021, 18:33:48 | Article "2020 CNCF Annual Report" retrieved
+INFO:werkzeug:172.17.0.1 - - [30/Oct/2021 18:33:48] "GET /1 HTTP/1.1" 200 -
