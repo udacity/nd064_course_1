@@ -2,7 +2,8 @@
 ENV["TERM"]="linux"
 
 Vagrant.configure("2") do |config|
-  
+  # disable password prompt
+  config.ssh.insert_key = false
   # set the image for the vagrant box
   config.vm.box = "opensuse/Leap-15.2.x86_64"
   ## Set the image version
