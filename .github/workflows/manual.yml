@@ -33,7 +33,7 @@ jobs:
         project: CONUPDATE
         issuetype: Task
         summary: |
-          Github PR [Assign the ND component] | Repo: ${{ github.repository }}  | PR# ${{github.event.number}}
+          Github PR ND064 CNAND C1 | Repo: ${{ github.repository }}  | PR# ${{github.event.number}}
         description: |
            Repo link: https://github.com/${{ github.repository }}   
            PR no. ${{ github.event.pull_request.number }} 
