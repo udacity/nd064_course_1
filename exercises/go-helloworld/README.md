@@ -54,9 +54,14 @@ docker push pixelpotato/go-helloworld:v1.0.0
 
 ### Step 3. Deploy to Kubernetes:
 ```
-# run the application
+# Shortcut method to run the application with headless pods
 kubectl run test --image pixelpotato/go-helloworld:v1.0.0
-
-# access the application on the local host
-kubectl port-forward test-97856cf4-6fvjw 7111:6111
+# Another way to deploy the application
+kubectl create deploy go-helloworld --image=pixelpotato/go-helloworld:v1.0.0
+# Display the pod name
+kubectl get pods
+# Copy the pod name from the output above
+# Access the application on the local host
+kubectl port-forward pod/go-helloworld-fcd468f98-rsj7p 6111:6111
 ```
+Access the application in the local machine on http://192.168.50.4:6111/ or http://127.0.0.1:6111/ 
