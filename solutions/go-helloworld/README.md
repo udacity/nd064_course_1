@@ -1,3 +1,25 @@
+### Step 1. Get the Dockerfile ready
+```
+# use the golang:alpine base image
+FROM golang:alpine
+
+# set the working directory to /go/src/app
+WORKDIR /go/src/app
+
+# copy all the files from the current directory to the container working directory
+ADD . .
+
+# import dependencies using `go mod init` and build the application using `go build -o helloworld` command
+RUN  go mod init && go build -o helloworld
+
+# expose the port 6111
+EXPOSE 6111
+
+# start the container
+CMD ["./helloworld"]
+```
+
+### Step 2. Package the application
 Steps to package the application using Docker commands:
 
 ``` 
@@ -17,7 +39,7 @@ docker push pixelpotato/go-helloworld:v1.0.0
 docker login
 ```
 
-Deploy to Kubernetes:
+### Step 3. Deploy to Kubernetes:
 ```
 # run the application
 kubectl run test --image pixelpotato/go-helloworld:v1.0.0

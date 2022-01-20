@@ -4,7 +4,8 @@ WORKDIR /go/src/app
 
 ADD . .
 
-RUN go build  -o helloworld
+# import dependencies
+RUN  go mod init && go build -o helloworld
 
 EXPOSE 6111
 
