@@ -1,2 +1,6 @@
-.env
-.vagrant
+.env/
+.venv/
+.vagrant/
+.myvenv/
+__pycache__/
+.vagrant/
