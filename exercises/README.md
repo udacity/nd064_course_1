@@ -18,6 +18,6 @@ The current folder conatins the following starter code for the classroom exercis
 ```
 
 
-**Note** that the specified `config.vm.box_version` in the Vagrantfile updates with time. You will have to change it from 242 shown in the video demo above to a newer version. When a particular version used in Vagrantfile becomes deprecated, the command prompt will show you all available newer versions. 
+**Note**: the specified `config.vm.box_version` in the Vagrantfile updates with time. You will have to change it from `212` shown in the demo video above to a newer version. When a particular version used in Vagrantfile becomes deprecated, the command prompt will show you all available newer versions. 
 
 
