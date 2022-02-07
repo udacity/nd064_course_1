@@ -12,7 +12,7 @@ The current folder conatins the following starter code for the classroom exercis
 │   ├── deployment.yaml
 │   ├── namespace.yaml
 │   └── service.yaml
-└── python-helloworld  # Docker Walkthrough code  
+└── python-helloworld  # Docker walkthrough code  
     ├── app.py
     └── requirements.txt
 ```
