@@ -1,4 +1,4 @@
-##  Named of the workflow.
+##  Named of the workflo.
 name: Python version
 ## Set the trigger policy.
 ## In this case, the workflow is execute on a `push` event,
