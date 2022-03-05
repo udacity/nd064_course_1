@@ -13,9 +13,39 @@ $ docker run -d -p '7111:3111' --name techtrends --rm techtrends:1.0.0.0
 ## Docker commands used to get the application logs
 ```bash
 $ docker logs -f techtrends
+
+* Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug:2022-03-05 21:12:16,260,  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug:2022-03-05 21:12:16,260,  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2022-03-05 21:12:22,600, 172.17.0.1 - - [05/Mar/2022 21:12:22] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2022-03-05 21:12:22,628, 172.17.0.1 - - [05/Mar/2022 21:12:22] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-03-05 21:12:24,304, Article "2020 CNCF Annual Report" retrieved
+INFO:werkzeug:2022-03-05 21:12:24,307, 172.17.0.1 - - [05/Mar/2022 21:12:24] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:2022-03-05 21:12:24,323, 172.17.0.1 - - [05/Mar/2022 21:12:24] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-03-05 21:12:38,663, About Us page retreived.
+INFO:werkzeug:2022-03-05 21:12:38,665, 172.17.0.1 - - [05/Mar/2022 21:12:38] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2022-03-05 21:12:38,685, 172.17.0.1 - - [05/Mar/2022 21:12:38] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2022-03-05 21:12:40,828, 172.17.0.1 - - [05/Mar/2022 21:12:40] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:2022-03-05 21:12:40,845, 172.17.0.1 - - [05/Mar/2022 21:12:40] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-03-05 21:12:47,045, Article "tewtwtwet" created.
 ```
 
 ## Logs from the container running the TechTrends application
 ```bash
-$ docker logs -f techtrends
+$ docker exec -it techtrends sh -c "cat app.log"
+
+INFO:app:05/03/2022, 15:15:58, Article "2020 CNCF Annual Report" retrieved
+INFO:app:05/03/2022, 15:15:05, Article "Kubernetes Certification" retrieved
+INFO:app:05/03/2022, 15:15:14, Article "asdadasdasd" created.
+INFO:app:05/03/2022, 15:15:17, Article "Kubernetes Certification" retrieved
+INFO:app:05/03/2022, 21:21:24, Article "2020 CNCF Annual Report" retrieved
+INFO:app:05/03/2022, 21:21:38, About Us page retreived.
+INFO:app:05/03/2022, 21:21:47, Article "tewtwtwet" created.
+INFO:app:05/03/2022, 21:21:51, Article "CNCF Cloud Native Interactive Landscape" retrieved
+INFO:app:05/03/2022, 21:21:55, Article "tewtwtwet" retrieved
 ```
