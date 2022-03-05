@@ -7,8 +7,9 @@ from werkzeug.exceptions import abort
 from flask import has_request_context, request
 from datetime import date, datetime
 
+# https://flask.palletsprojects.com/en/2.0.x/logging/
+from logging.config import dictConfig
 
-# setup the logger, https://flask.palletsprojects.com/en/2.0.x/logging/
 # Define the Flask application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hit me baby, one more time!'
@@ -16,8 +17,10 @@ app.config['SECRET_KEY'] = 'hit me baby, one more time!'
 # set and initialize collections object to track metric information
 collections_obj = {
         'db_connection_count': 0,
-        'post_count': None
+        'post_count': 0
 }
+
+
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
@@ -34,6 +37,7 @@ def get_post(post_id):
     connection.close()
     return post
 
+
 # Define the main route of the web application 
 @app.route('/')
 def index():
@@ -49,16 +53,16 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-      mylogger(f'Article {post_id} non-existent, unable to retrieve.')
+      app.logger.info(f'Article {post_id} non-existent, unable to retrieve.')
       return render_template('404.html'), 404
     else:
-      mylogger('Article "{}" retrieved'.format(post['title']))
+      app.logger.info('Article "{}" retrieved'.format(post['title']))
       return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
-    mylogger(f'About Us page retreived.')
+    app.logger.info(f'About Us page retreived.')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -77,7 +81,7 @@ def create():
                          (title, content))
             connection.commit()
             connection.close()
-            mylogger(f'Article "{title}" created.')
+            app.logger.info(f'Article "{title}" created.')
             return redirect(url_for('index'))
 
     return render_template('create.html')
@@ -109,21 +113,29 @@ def metrics():
     Display metrics gathered within the collection_obj
     """
     get_posts_metrics(collections_obj)
-    connection = get_db_connection()
-    connection.close()
     response = app.response_class(
         response=json.dumps(collections_obj),
         status=200,
         mimetype='application/json')
-    app.logger.info('/metrics route handler called.')
+    app.logger.info(f'/metrics route handler called. db_connections: {collections_obj["db_connection_count"]}, {collections_obj["post_count"]}')
     return response
 app.add_url_rule('/metrics', 'metrics', metrics)
 
-def mylogger(str_message):
-    now = datetime.now()
-    app.logger.debug(f'[{now.strftime("%m/%d/%Y")}], [{now.strftime("%H:%M:%S")}], {str_message}.')
-
 # start the application on port 3111
 if __name__ == "__main__":
-   logging.basicConfig(level=logging.DEBUG, format=f'%(asctime)s %(name)s : %(message)s')
-   app.run(host='0.0.0.0', port='3111')
+
+    # INFO:werkzeug:127.0.0.1 - - [08/Jan/2021 22:40:06] "GET /metrics HTTP/1.1" 200 -
+    # INFO:werkzeug:127.0.0.1 - - [08/Jan/2021 22:40:09] "GET / HTTP/1.1" 200 -
+    # INFO:app:01/08/2021, 22:40:10, Article "2020 CNCF Annual Report" retrieved!
+    logging.basicConfig(level=logging.DEBUG,format='%(levelname)s:%(name)s:%(asctime)s, %(message)s')
+
+    # add a customer handler to app logger https://docs.python.org/3/howto/logging-cookbook.html#logging-to-multiple-destinations
+    logger = logging.getLogger('app')
+    logger.setLevel(logging.DEBUG)
+    app_file_handler = logging.FileHandler('app.log')
+    formatter = logging.Formatter('%(levelname)s:%(name)s:%(asctime)s, %(message)s',datefmt='%d/%m/%Y, %H:%H:%S')
+    app_file_handler.setFormatter(formatter)
+    app_file_handler.setLevel(logging.DEBUG)
+    logger.addHandler(app_file_handler)
+    
+    app.run(host='0.0.0.0', port='3111')
