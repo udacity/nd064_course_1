@@ -4,3 +4,5 @@
 .myvenv/
 __pycache__/
 .vagrant/
+project/techtrends/app.log
+project/techtrends/database.db
