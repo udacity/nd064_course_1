@@ -5,9 +5,14 @@ from werkzeug.exceptions import abort
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
+db_connection_count = 0
 def get_db_connection():
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
+
+    global db_connection_count
+    db_connection_count = db_connection_count + 1
+
     return connection
 
 # Function to get a post using its ID
@@ -17,6 +22,13 @@ def get_post(post_id):
                         (post_id,)).fetchone()
     connection.close()
     return post
+
+# Function to count posts
+def get_post_count():
+    connection = get_db_connection()
+    results = connection.execute('SELECT COUNT(*) FROM posts').fetchone()
+    connection.close()
+    return results[0]
 
 # Define the Flask application
 app = Flask(__name__)
@@ -72,6 +84,18 @@ def healthcheck():
             status=200,
             mimetype='application/json'
     )
+    return response
+
+@app.route('/metrics')
+def metrics():
+    global db_connection_count
+    post_count = get_post_count()
+    response = app.response_class(
+            response=json.dumps({"status":"success","code":0,"data":{"db_connection_count": db_connection_count, "post_count": post_count}}),
+            status=200,
+            mimetype='application/json'
+    )
+
     return response
 
 # start the application on port 3111
