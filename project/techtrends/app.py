@@ -1,11 +1,16 @@
 import sqlite3
+import logging
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
+totalConnectionCount = 0
+
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
+    global totalConnectionCount
+    totalConnectionCount += 1
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
     return connection
@@ -36,13 +41,16 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
+      app.logger.warning('Post %d was not found' % post_id)
       return render_template('404.html'), 404
     else:
+      app.logger.debug('Retrieved article (id=%d) with title "%s"' % (post_id, post['title']))
       return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
+    app.logger.debug('"About Us" was called')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -55,6 +63,7 @@ def create():
         if not title:
             flash('Title is required!')
         else:
+            app.logger.info('Created new article with title "%s"' % title)
             connection = get_db_connection()
             connection.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
                          (title, content))
@@ -65,6 +74,37 @@ def create():
 
     return render_template('create.html')
 
+# Define the healthcheck endpoint
+@app.route('/healthz')
+def status():
+    response = app.response_class(
+        response=json.dumps({"result": "OK - healthy"}),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+# Define the metrics endpoint
+@app.route('/metrics')
+def metrics():
+    postCount = getPostCount()
+    response = app.response_class(
+        response=json.dumps({"status": "success", "data": {
+                            "db_connection_count": totalConnectionCount, "post_count": postCount}}),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+# Get the count of posts in the database
+def getPostCount():
+    connection = get_db_connection()
+    count = connection.execute('SELECT COUNT(*) FROM posts').fetchone()
+    connection.close()
+    return count[0]
+
 # start the application on port 3111
 if __name__ == "__main__":
+   FORMAT = '%(levelname)s: [%(asctime)s] %(message)s'
+   logging.basicConfig(format=FORMAT, level=logging.DEBUG)
    app.run(host='0.0.0.0', port='3111')
