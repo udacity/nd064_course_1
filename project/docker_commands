@@ -1,11 +1,65 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build . -t techtrends
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run  -p 7111:3111 -d techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker logs 8d7825e6a41d7591372641c0e88a742aa2b2ee424f6734b06a91042b47ed4aa7
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING: [2022-07-12 10:23:31,591]  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO: [2022-07-12 10:23:31,591]  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO: [2022-07-12 10:23:46,524] 172.17.0.1 - - [12/Jul/2022 10:23:46] "GET / HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:46,614] 172.17.0.1 - - [12/Jul/2022 10:23:46] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:46,660] 172.17.0.1 - - [12/Jul/2022 10:23:46] "GET /favicon.ico HTTP/1.1" 404 -
+INFO: [2022-07-12 10:23:50,883] 172.17.0.1 - - [12/Jul/2022 10:23:50] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:56,220] 172.17.0.1 - - [12/Jul/2022 10:23:56] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:57,172] 172.17.0.1 - - [12/Jul/2022 10:23:57] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:57,653] 172.17.0.1 - - [12/Jul/2022 10:23:57] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:57,838] 172.17.0.1 - - [12/Jul/2022 10:23:57] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:58,056] 172.17.0.1 - - [12/Jul/2022 10:23:58] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:58,254] 172.17.0.1 - - [12/Jul/2022 10:23:58] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:58,440] 172.17.0.1 - - [12/Jul/2022 10:23:58] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:58,622] 172.17.0.1 - - [12/Jul/2022 10:23:58] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:58,836] 172.17.0.1 - - [12/Jul/2022 10:23:58] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:59,026] 172.17.0.1 - - [12/Jul/2022 10:23:59] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:59,224] 172.17.0.1 - - [12/Jul/2022 10:23:59] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:59,422] 172.17.0.1 - - [12/Jul/2022 10:23:59] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:59,623] 172.17.0.1 - - [12/Jul/2022 10:23:59] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:23:59,823] 172.17.0.1 - - [12/Jul/2022 10:23:59] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:00,009] 172.17.0.1 - - [12/Jul/2022 10:24:00] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:00,226] 172.17.0.1 - - [12/Jul/2022 10:24:00] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:00,410] 172.17.0.1 - - [12/Jul/2022 10:24:00] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:00,626] 172.17.0.1 - - [12/Jul/2022 10:24:00] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:11,901] 172.17.0.1 - - [12/Jul/2022 10:24:11] "GET / HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:11,961] 172.17.0.1 - - [12/Jul/2022 10:24:11] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:11,970] 172.17.0.1 - - [12/Jul/2022 10:24:11] "GET /favicon.ico HTTP/1.1" 404 -
+DEBUG: [2022-07-12 10:24:13,273] Retrieved article (id=1) with title "2020 CNCF Annual Report"
+INFO: [2022-07-12 10:24:13,277] 172.17.0.1 - - [12/Jul/2022 10:24:13] "GET /1 HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:13,345] 172.17.0.1 - - [12/Jul/2022 10:24:13] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: [2022-07-12 10:24:15,228] 172.17.0.1 - - [12/Jul/2022 10:24:15] "GET /create HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:15,290] 172.17.0.1 - - [12/Jul/2022 10:24:15] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: [2022-07-12 10:24:26,199] Created new article with title "Mein erster Post"
+INFO: [2022-07-12 10:24:26,205] 172.17.0.1 - - [12/Jul/2022 10:24:26] "POST /create HTTP/1.1" 302 -
+INFO: [2022-07-12 10:24:26,217] 172.17.0.1 - - [12/Jul/2022 10:24:26] "GET / HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:26,292] 172.17.0.1 - - [12/Jul/2022 10:24:26] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG: [2022-07-12 10:24:28,373] Retrieved article (id=7) with title "Mein erster Post"
+INFO: [2022-07-12 10:24:28,373] 172.17.0.1 - - [12/Jul/2022 10:24:28] "GET /7 HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:28,446] 172.17.0.1 - - [12/Jul/2022 10:24:28] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: [2022-07-12 10:24:30,108] 172.17.0.1 - - [12/Jul/2022 10:24:30] "GET / HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:30,186] 172.17.0.1 - - [12/Jul/2022 10:24:30] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: [2022-07-12 10:24:34,133] 172.17.0.1 - - [12/Jul/2022 10:24:34] "GET /metrics HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:48,981] 172.17.0.1 - - [12/Jul/2022 10:24:48] "GET / HTTP/1.1" 200 -
+INFO: [2022-07-12 10:24:49,068] 172.17.0.1 - - [12/Jul/2022 10:24:49] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO: [2022-07-12 10:26:04,399] 172.17.0.1 - - [12/Jul/2022 10:26:04] "GET / HTTP/1.1" 200 -
+INFO: [2022-07-12 10:26:04,476] 172.17.0.1 - - [12/Jul/2022 10:26:04] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG: [2022-07-12 10:27:24,485] Retrieved article (id=2) with title "KubeCon + CloudNativeCon 2021"
+INFO: [2022-07-12 10:27:24,485] 172.17.0.1 - - [12/Jul/2022 10:27:24] "GET /2 HTTP/1.1" 200 -
+INFO: [2022-07-12 10:27:24,564] 172.17.0.1 - - [12/Jul/2022 10:27:24] "GET /static/css/main.css HTTP/1.1" 304 -
