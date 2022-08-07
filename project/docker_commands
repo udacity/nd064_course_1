@@ -1,11 +1,46 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends -f Dockerfile .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -p 7111:3111 --name tt -d techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker logs tt
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+ ```
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[2022-08-07 00:28:34,871] WARNING in _internal:  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+[2022-08-07 00:28:34,871] INFO in _internal:  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+[2022-08-07 00:28:42,528] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:42] "GET / HTTP/1.1" 200 -
+[2022-08-07 00:28:42,534] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:42] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:28:45,387] INFO in app: Article 2020 CNCF Annual Report retrieved!
+[2022-08-07 00:28:45,392] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:45] "GET /1 HTTP/1.1" 200 -
+[2022-08-07 00:28:45,404] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:45] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:28:48,446] INFO in app: About us page retrieved!
+[2022-08-07 00:28:48,448] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:48] "GET /about HTTP/1.1" 200 -
+[2022-08-07 00:28:48,457] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:48] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:28:49,916] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:49] "GET /create HTTP/1.1" 200 -
+[2022-08-07 00:28:49,929] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:28:49] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:29:00,979] INFO in app: A new article: Creating a post has been created!
+[2022-08-07 00:29:00,980] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:00] "POST /create HTTP/1.1" 302 -
+[2022-08-07 00:29:00,996] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:00] "GET / HTTP/1.1" 200 -
+[2022-08-07 00:29:01,009] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:01] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:29:07,480] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:07] "GET / HTTP/1.1" 200 -
+[2022-08-07 00:29:07,485] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:07] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:29:07,498] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:07] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:29:10,273] INFO in app: Status request successful
+[2022-08-07 00:29:10,274] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:10] "GET /healthz HTTP/1.1" 200 -
+[2022-08-07 00:29:13,116] INFO in app: Status request successful
+[2022-08-07 00:29:13,116] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:13] "GET /healthz HTTP/1.1" 200 -
+[2022-08-07 00:29:14,065] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:14] "GET / HTTP/1.1" 200 -
+[2022-08-07 00:29:14,071] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:14] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:29:14,077] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:14] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-08-07 00:29:14,872] INFO in app: Metrics request successful
+[2022-08-07 00:29:14,873] INFO in _internal: 172.17.0.1 - - [07/Aug/2022 00:29:14] "GET /metrics HTTP/1.1" 200 -
+```
