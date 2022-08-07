@@ -1,9 +1,11 @@
-name: ci
+name: TechTrends - Package with Docker
 
 on:
   push:
     branches:
       - 'main'
+    paths:
+      - project/**
 
 jobs:
   docker:
@@ -25,5 +27,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: "{{defaultContext}}:project"
+          file: Dockerfile
           push: true
-          tags: user/app:latest
+          tags: user/techtrends:latest

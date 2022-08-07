@@ -1,0 +1,25 @@
+## provide the name of the namespace
+namespace:
+  name: demo
+
+## define the image to execute with the Deployment 
+image:
+  name: placeholder
+  repository: nginx
+  tag: alpine
+  imagePullPolicy : ifNotPresent
+
+resources:
+  limits:
+    memory: "256Mi"
+    cpu: "50m"
+
+## set the number of replicas for an application 
+replicaCount: 3
+
+service:
+  port: 8111
+  type: ClusterIP
+
+  configmap:
+  data: "version: alpine"

@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-alpine
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    # path to the folder with the YAML manifests
+    path: exercises/manifests
+    repoURL: https://github.com/udacity/nd064_course_1 
+    targetRevision: HEAD
+  # Sync policy
+  syncPolicy: {}
