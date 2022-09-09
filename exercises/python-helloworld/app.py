@@ -24,7 +24,7 @@ def metrics():
             response=json.dumps({"status":"success","code":0,"data":{"UserCount": 140, "UserCountActive": 23}}), #json.dumps() converts python object it a json string
             status=200, #this refers to the http requests has been succesfully served
             mimetype='application/json' #format of the response data 
-    )
+    ) 
 
     return response
 
