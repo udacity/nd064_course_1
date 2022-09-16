@@ -10,7 +10,7 @@ spec:
   ports:
   - port: 8111
     protocol: TCP
-    targetPort: 8111
+    targetPort: 80
   selector:
     app: nginx
     tag: alpine
