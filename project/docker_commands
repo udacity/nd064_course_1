@@ -4,7 +4,7 @@ sudo docker build -t techtrends .
 
 ## Docker commands used to run the application
 
-sudo docker run -d --rm --name techtrends -p 3111:3111 techtrends
+sudo docker run -d --rm --name techtrends -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 sudo docker logs techtrends
