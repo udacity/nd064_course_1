@@ -12,8 +12,8 @@ replicaCount: 1
 containerPort: 3111
 livenessProbe:
   path: /healthz
-readynessProbe:
-  path: /healthz  
+readinessProbe:
+  path: /healthz
 resources:
   requests:
     memory: "64Mi"
