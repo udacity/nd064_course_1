@@ -11,7 +11,11 @@ spec:
   - name: techtrends-svc
     port: {{ .Values.service.port }}
     protocol: {{.Values.service.protocol}}
+    {{ if .Values.service.targetPort }}
     targetPort: {{.Values.service.targetPort}}
+    {{ else }}
+    targetPort: {{.Values.service.port}}
+    {{ end }}
   selector:
     app: techtrends
   type: {{.Values.service.type}}
