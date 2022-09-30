@@ -5,15 +5,15 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: { { .Values.namespace } }
+  namespace: {{ .Values.namespace }}
 spec:
   ports:
-    - name: techtrends-svc
-      port: { { .Values.service.port } }
-      protocol: { { .Values.service.protocol } }
-      targetPort: { { .Values.service.targetPort } }
+  - name: techtrends-svc
+    port: {{ .Values.service.port }}
+    protocol: {{.Values.service.protocol}}
+    targetPort: {{.Values.service.targetPort}}
   selector:
     app: techtrends
-  type: { { .Values.service.type } }
+  type: {{.Values.service.type}}
 status:
   loadBalancer: {}
