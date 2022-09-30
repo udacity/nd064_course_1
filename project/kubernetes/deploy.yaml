@@ -17,7 +17,7 @@ spec:
         app: techtrends
     spec:
       containers:
-        - image: techtrends:latest
+        - image: nadavsinai/techtrends:latest
           name: techtrends
           ports:
             - containerPort: 3111
