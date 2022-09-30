@@ -25,10 +25,10 @@ spec:
            {{- toYaml .Values.resources | nindent 12 }}
           livenessProbe:
             httpGet:
-              path: {{.Values.livenessProbe.Path | quote}}
+              path: {{.Values.livenessProbe.path | quote}}
               port: {{ .Values.containerPort }}
           readinessProbe:
             httpGet:
-              path: {{.Values.readinessProbe.Path | quote }}
+              path: {{.Values.readinessProbe.path | quote }}
               port: {{ .Values.containerPort }}
 status: {}
