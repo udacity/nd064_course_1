@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: techtrends
+  name: techtrends
+  namespace: { { .Values.namespace } }
+spec:
+  ports:
+    - name: techtrends-svc
+      port: { { .Values.service.port } }
+      protocol: { { .Values.service.protocol } }
+      targetPort: { { .Values.service.targetPort } }
+  selector:
+    app: techtrends
+  type: { { .Values.service.type } }
+status:
+  loadBalancer: {}

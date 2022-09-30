@@ -1,0 +1,9 @@
+apiVersion: v1
+name: "techtrends"
+version: 1.0.0
+keywords:
+  - "techtrends"
+
+maintainers:
+  - name: "Nadav Sinai"
+    email: "ns@nadavsinai.com"
