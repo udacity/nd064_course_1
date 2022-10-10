@@ -1,0 +1,8 @@
+apiVersion: v1
+name: techtrends
+keywords:
+  - techtrends
+version: 1.0.0
+maintainers:
+  - name: Przemyslaw
+    email: przemyslaw.sulecki@nokia.com
