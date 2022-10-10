@@ -112,5 +112,5 @@ def metrics():
 # start the application on port 3111
 if __name__ == "__main__":
     FORMAT = "%(asctime)s %(message)s"
-    logging.basicConfig(format=FORMAT, filename="app.log", level=logging.DEBUG)
+    logging.basicConfig(format=FORMAT, level=logging.DEBUG)
     app.run(host="0.0.0.0", port="3111")
