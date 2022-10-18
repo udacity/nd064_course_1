@@ -87,6 +87,18 @@ def create():
 
 @app.route("/healthz")
 def healthz():
+    try:
+        connection = get_db_connection()
+        connection.execute("SELECT * FROM posts LIMIT 1;")
+    except Exception as e:
+        app.logger.error(e)
+        response = app.response_class(
+            response=json.dumps({"result": "ERROR - unhealthy"}),
+            status=500,
+            mimetype="application/json",
+        )
+        return response
+
     response = app.response_class(
         response=json.dumps({"result": "OK - healthy"}),
         status=200,
