@@ -1,7 +1,7 @@
 namespace: staging
 service:
   port: 5111
-replicaCount: 3
+replicaCount: 2
 resources:
   requests:
     memory: "90Mi"
