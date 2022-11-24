@@ -1,6 +1,7 @@
 namespace: prod
 service:
   port: 7111
+  type: LoadBalancer
 replicaCount: 5
 image:
   pullPolicy: Always
