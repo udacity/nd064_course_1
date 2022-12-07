@@ -21,7 +21,7 @@ jobs:
        
      - name: Substitute artifacts
        uses: Azure/k8s-artifact-substitute@v1
-         with:
+       with:
           # Path to the template manifest files which will be used for deployment.
           # possibly this will be values.yaml for a helm template and we will then bake the helm https://github.com/marketplace/actions/helmfile-render
           manifests: project/kubernetes
@@ -29,8 +29,8 @@ jobs:
           images: "nadavsinai/techtrends:${{ event.input.dockerTag }}"
         
      - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
-        with:
+       uses: peter-evans/create-pull-request@v4
+       with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Update deplotment to ${{ event.input.dockerTag }}"
           committer: DeploymentBot <noreply@philips.com>
