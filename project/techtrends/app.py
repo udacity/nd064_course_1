@@ -3,10 +3,13 @@ import sqlite3
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
+DATABASE_FILE='database.db'
+PORT='3111'
+
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 def get_db_connection():
-    connection = sqlite3.connect('database.db')
+    connection = sqlite3.connect(DATABASE_FILE)
     connection.row_factory = sqlite3.Row
     return connection
 
@@ -67,4 +70,4 @@ def create():
 
 # start the application on port 3111
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port='3111')
+   app.run(host='0.0.0.0', port=PORT)
