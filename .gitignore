@@ -4,5 +4,6 @@
 .myvenv/
 __pycache__/
 .vagrant/
+.DS_Store
 # ignore database files
 *.db
