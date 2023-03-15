@@ -1,11 +1,39 @@
 ## Docker commands used to build the application 
 # TODO: insert the docker build command
+docker image build -t techtrends .
 
 ## Docker commands used to run the application
 # TODO: insert the docker run command
+docker container run -d --rm --name techtrends -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
+docker container logs techtrends
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+* Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+2023-03-14 23:02:25 WARNING:werkzeug  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2023-03-14 23:02:25 INFO:werkzeug  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+2023-03-14 23:04:29 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:04:29] "GET / HTTP/1.1" 200 -
+2023-03-14 23:04:29 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:04:29] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-03-14 23:06:55 INFO:app Article, "2020 CNCF Annual Report" retrieved
+2023-03-14 23:06:55 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:06:55] "GET /1 HTTP/1.1" 200 -
+2023-03-14 23:06:55 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:06:55] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-03-14 23:08:11 INFO:app about.html retrieved
+2023-03-14 23:08:11 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:08:11] "GET /about HTTP/1.1" 200 -
+2023-03-14 23:08:11 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:08:11] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-03-14 23:09:34 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:09:34] "GET /create HTTP/1.1" 200 -
+2023-03-14 23:09:34 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:09:34] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-03-14 23:10:35 INFO:app New article, "Hello World" created
+2023-03-14 23:10:35 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:10:35] "POST /create HTTP/1.1" 302 -
+2023-03-14 23:10:35 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:10:35] "GET / HTTP/1.1" 200 -
+2023-03-14 23:10:35 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:10:35] "GET /static/css/main.css HTTP/1.1" 304 -
+2023-03-14 23:10:47 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:10:47] "GET /healthz HTTP/1.1" 200 -
+2023-03-14 23:11:47 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:11:47] "GET /metics HTTP/1.1" 404 -
+2023-03-14 23:11:51 INFO:werkzeug 172.17.0.1 - - [14/Mar/2023 23:11:51] "GET /metrics HTTP/1.1" 200 -
