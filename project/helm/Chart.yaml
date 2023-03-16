@@ -1,0 +1,9 @@
+apiVersion: v1
+name: techtrends
+description: Install techtrends to the cluster
+keywords:
+  - techtrends
+version: 1.0.0
+maintainers:
+  - name: Darius Hall
+    email: darius.dzh@gmail.com
