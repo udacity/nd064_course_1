@@ -2,8 +2,6 @@ name: "TechTrends - Package with Docker"
 
 on:
   push:
-    branches:
-      - "**"
     tags:
       - "v*.*.*"
   pull_request:
