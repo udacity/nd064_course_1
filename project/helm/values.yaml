@@ -3,7 +3,7 @@ namespace:
 
 service:
   port: 4111
-  targetPort: {{ .Values.containerPort }}
+  targetPort: 3111
   protocol: TCP
   type: ClusterIP
 
@@ -27,8 +27,8 @@ containerPort: 3111
 livenessProbe:
   httpGet:
     path: /healthz
-    port: {{ .Values.containerPort }}
+    port: 3111
 readinessProbe:
   httpGet:
     path: /healthz
-    port: {{ .Values.containerPort }}
+    port: 3111
