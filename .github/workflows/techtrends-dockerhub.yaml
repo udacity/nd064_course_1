@@ -5,7 +5,8 @@ on:
     - cron: "0 2 1 * *"
 
   push:
-    branches: [ main ]
+    branches:
+      - "**"
     paths: [ "project/techtrends" ]
   pull_request:
     branches: [ main ]
