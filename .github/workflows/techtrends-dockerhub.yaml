@@ -2,7 +2,10 @@ name: "TechTrends - Package with Docker"
 
 on:
   push:
-    branches: [ "**" ]
+    branches:
+     - "**"
+    tags:
+      - v**
 
 jobs:
   build:
@@ -16,7 +19,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: dubiza/techtrends
+          images: |
+            name=dubiza/techtrends
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=semver,pattern={{version}}
@@ -40,4 +44,4 @@ jobs:
           file: ./Dockerfile
           platforms: "linux/amd64,linux/arm64"
           push: true
-          tags: dubiza/techtrends:${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}
