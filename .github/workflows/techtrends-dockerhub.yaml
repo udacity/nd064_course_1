@@ -1,16 +1,8 @@
 name: "TechTrends - Package with Docker"
 
 on:
-  schedule:
-    - cron: "0 2 1 * *"
-
   push:
-    branches:
-      - "**"
-    paths: [ "project/techtrends" ]
-  pull_request:
-    branches: [ main ]
-    paths: [ "project/techtrends" ]
+    branches: [ "**" ]
 
 jobs:
   build:
