@@ -1,11 +1,40 @@
-## Docker commands used to build the application 
-# TODO: insert the docker build command
+## Docker commands used to build the application
+
+docker build -t udacity_techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+
+docker run -d -p 7111:3111 --name udacity_techtrends udacity_techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+
+docker container logs udacity_techtrends
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+
+- Serving Flask app 'app' (lazy loading)
+- Environment: production
+  WARNING: This is a development server. Do not use it in a production deployment.
+  Use a production WSGI server instead.
+- Debug mode: off
+  WARNING:werkzeug:2023-03-19 09:01:46, _ Running on all addresses.
+  WARNING: This is a development server. Do not use it in a production deployment.
+  INFO:werkzeug:2023-03-19 09:01:46, _ Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+  INFO:werkzeug:2023-03-19 09:01:51, 172.17.0.1 - - [19/Mar/2023 09:01:51] "GET / HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:01:51, 172.17.0.1 - - [19/Mar/2023 09:01:51] "GET /static/css/main.css HTTP/1.1" 304 -
+  DEBUG:app:2023-03-19 09:01:54, Article "2020 CNCF Annual Report"retrieved!
+  INFO:werkzeug:2023-03-19 09:01:54, 172.17.0.1 - - [19/Mar/2023 09:01:54] "GET /2 HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:01:54, 172.17.0.1 - - [19/Mar/2023 09:01:54] "GET /static/css/main.css HTTP/1.1" 304 -
+  DEBUG:app:2023-03-19 09:01:55, Article "KubeCon + CloudNativeCon 2021"retrieved!
+  INFO:werkzeug:2023-03-19 09:01:55, 172.17.0.1 - - [19/Mar/2023 09:01:55] "GET /3 HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:01:55, 172.17.0.1 - - [19/Mar/2023 09:01:55] "GET /static/css/main.css HTTP/1.1" 304 -
+  DEBUG:app:2023-03-19 09:01:56, Article "Kubernetes v1.20 Release Notes"retrieved!
+  INFO:werkzeug:2023-03-19 09:01:56, 172.17.0.1 - - [19/Mar/2023 09:01:56] "GET /4 HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:01:56, 172.17.0.1 - - [19/Mar/2023 09:01:56] "GET /static/css/main.css HTTP/1.1" 304 -
+  DEBUG:app:2023-03-19 09:01:59, The "About Us" page is retrieved
+  INFO:werkzeug:2023-03-19 09:01:59, 172.17.0.1 - - [19/Mar/2023 09:01:59] "GET /about HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:01:59, 172.17.0.1 - - [19/Mar/2023 09:01:59] "GET /static/css/main.css HTTP/1.1" 304 -
+  INFO:werkzeug:2023-03-19 09:02:08, 172.17.0.1 - - [19/Mar/2023 09:02:08] "GET /healthz HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:02:12, 172.17.0.1 - - [19/Mar/2023 09:02:12] "GET /metrics HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:02:16, 172.17.0.1 - - [19/Mar/2023 09:02:16] "GET /metrics HTTP/1.1" 200 -
+  INFO:werkzeug:2023-03-19 09:02:18, 172.17.0.1 - - [19/Mar/2023 09:02:18] "GET /metrics HTTP/1.1" 200 -

@@ -6,3 +6,10 @@ CREATE TABLE posts (
     title TEXT NOT NULL,
     content TEXT NOT NULL
 );
+
+DROP TABLE IF EXISTS DatabaseConnection;
+
+CREATE TABLE DatabaseConnection (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    numOfConnection INTEGER
+);
