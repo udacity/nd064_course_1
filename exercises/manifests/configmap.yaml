@@ -1,7 +1,0 @@
-apiVersion: v1
-data:
-  version: alpine
-kind: ConfigMap
-metadata:
-  name: nginx-version
-  namespace: demo
