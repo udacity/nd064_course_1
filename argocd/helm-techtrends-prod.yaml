@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: <REPO_URL> # Replace with the URL of your Git repository
+    repoURL: https://github.com/kydq2022/cloud-native-application-architecture-p1.git
     targetRevision: HEAD
     path: helm
     helm:
