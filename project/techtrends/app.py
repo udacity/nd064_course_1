@@ -1,5 +1,5 @@
 import sqlite3
-
+import logging
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
@@ -21,6 +21,7 @@ def get_post(post_id):
 # Define the Flask application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
+app.logger.setLevel(logging.DEBUG)
 
 # Define the main route of the web application 
 @app.route('/')
@@ -36,13 +37,16 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
+      app.logger.info('Article with ID: %s is not found', post_id)
       return render_template('404.html'), 404
     else:
+      app.logger.info('Article "%s" retrieved!', post['title'])
       return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
+    app.logger.info('"About us" page is accessed')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -60,10 +64,35 @@ def create():
                          (title, content))
             connection.commit()
             connection.close()
-
+            app.logger.debug('A new article with title "%s" is successfully created', title)
             return redirect(url_for('index'))
 
     return render_template('create.html')
+
+# Define the health check endpoint
+@app.route('/healthz')
+def health():
+    response = app.response_class(
+            response=json.dumps({"result":"OK - healthy"}),
+            status=200,
+            mimetype='application/json'
+    )
+    return response
+
+# Define the metrics check endpoint
+@app.route('/metrics')
+def metrics():
+    connection = get_db_connection()
+    cursor = connection.cursor()
+    result = cursor.execute('SELECT COUNT(*) FROM posts').fetchone()
+    postCount = result[0]
+    connection.close()
+    response = app.response_class(
+            response=json.dumps({"db_connection_count": 1, "post_count": postCount}),
+            status=200,
+            mimetype='application/json'
+    )
+    return response
 
 # start the application on port 3111
 if __name__ == "__main__":
