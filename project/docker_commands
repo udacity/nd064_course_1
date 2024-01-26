@@ -3,12 +3,13 @@
 # docker build -t techtrends .
 
 ## Docker commands used to run the application
-# docker run -d -p 3111:3111 techtrends
+# docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# docker logd 49f1c2c39854
+# docker logs dbee1fd338f7
 
 ## Logs from the container running the TechTrends application
+ sudo docker logs  dbee1fd338f7
  * Serving Flask app 'app' (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
@@ -17,5 +18,35 @@
  * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://172.18.0.2:3111/ (Press CTRL+C to quit)
-172.17.208.1 - - [15/Jan/2024 07:33:24] "GET / HTTP/1.1" 200 -
-172.17.208.1 - - [15/Jan/2024 07:33:24] "GET /static/css/main.css HTTP/1.1" 304 -
+172.18.0.1 - - [20/Jan/2024 16:13:13] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:13:13] "GET /static/css/main.css HTTP/1.1" 304 -
+172.18.0.1 - - [20/Jan/2024 16:13:13] "GET /favicon.ico HTTP/1.1" 404 -
+[2024-01-20 16:13:28,614] INFO in app: Article "2020 CNCF Annual Report" retrieved!
+172.18.0.1 - - [20/Jan/2024 16:13:28] "GET /1 HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:13:28] "GET /static/css/main.css HTTP/1.1" 304 -
+172.18.0.1 - - [20/Jan/2024 16:13:33] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:13:33] "GET /static/css/main.css HTTP/1.1" 304 -
+[2024-01-20 16:13:35,747] INFO in app: "About us" page is accessed
+172.18.0.1 - - [20/Jan/2024 16:13:35] "GET /about HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:13:35] "GET /static/css/main.css HTTP/1.1" 304 -
+172.18.0.1 - - [20/Jan/2024 16:13:37] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:13:37] "GET /static/css/main.css HTTP/1.1" 304 -
+[2024-01-20 16:13:51,640] INFO in app: Article "CNCF Cloud Native Definition v1.0" retrieved!
+172.18.0.1 - - [20/Jan/2024 16:13:51] "GET /5 HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:13:51] "GET /static/css/main.css HTTP/1.1" 304 -
+[2024-01-20 16:14:03,253] INFO in app: Article with ID: 10 is not found
+172.18.0.1 - - [20/Jan/2024 16:14:03] "GET /10 HTTP/1.1" 404 -
+172.18.0.1 - - [20/Jan/2024 16:14:03] "GET /static/css/main.css HTTP/1.1" 304 -
+172.18.0.1 - - [20/Jan/2024 16:14:20] "GET /create HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:14:20] "GET /static/css/main.css HTTP/1.1" 304 -
+[2024-01-20 16:14:30,526] INFO in app: A new article with title "My new post" is successfully created
+172.18.0.1 - - [20/Jan/2024 16:14:30] "POST /create HTTP/1.1" 302 -
+172.18.0.1 - - [20/Jan/2024 16:14:30] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:14:30] "GET /static/css/main.css HTTP/1.1" 304 -
+172.18.0.1 - - [20/Jan/2024 16:15:02] "GET /metrics HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:15:14] "GET /healthz HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:15:23] "GET / HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:15:23] "GET /static/css/main.css HTTP/1.1" 304 -
+[2024-01-20 16:15:57,209] INFO in app: Article "My new post" retrieved!
+172.18.0.1 - - [20/Jan/2024 16:15:57] "GET /7 HTTP/1.1" 200 -
+172.18.0.1 - - [20/Jan/2024 16:15:57] "GET /static/css/main.css HTTP/1.1" 304 -

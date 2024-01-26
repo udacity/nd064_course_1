@@ -64,7 +64,7 @@ def create():
                          (title, content))
             connection.commit()
             connection.close()
-            app.logger.debug('A new article with title "%s" is successfully created', title)
+            app.logger.info('A new article with title "%s" is successfully created', title)
             return redirect(url_for('index'))
 
     return render_template('create.html')
