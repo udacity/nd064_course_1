@@ -10,7 +10,7 @@ jobs:
   check-python-version:
     ## Configure the operating system the workflow should run on.
     ## In this case, the job on Ubuntu
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     ## Define a sequence of steps to be executed 
     steps:
       ## Use the public `checkout` actoin  in version v2  
