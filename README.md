@@ -4,3 +4,7 @@
 **Course Homepage**: https://sites.google.com/udacity.com/suse-cloud-native-foundations/home
 
 **Instructor**: https://github.com/kgamanji
+
+### [@vinhloc30796](https://github.com/vinhloc30796) workalong
+
+Working along with the CI/CD
